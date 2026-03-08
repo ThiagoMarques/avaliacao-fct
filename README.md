@@ -1,61 +1,153 @@
-# Avaliação FCT - Angular Avaliação FCT
+# Avaliação FCT - Angular
 
-## 1. Passos para começar
+Sistema de avaliação desenvolvido com Angular para gestão de avaliações FCT (Gratificação de Função Comissionada Técnica) - SERPRO.
+
+## Sobre
+
+Aplicação web desenvolvida em Angular para gerenciamento de avaliações, colaboradores, projetos e atributos relacionados ao sistema FCT.
+
+## Funcionalidades
+
+- Gestão de colaboradores
+- Sistema de avaliações
+- Atributos e pesos
+- Relatórios e consultas
+- Gestão de projetos
+- Distribuição e abrangência
+- Sistema de segurança e autenticação
+
+## Como Começar
+
+### Pré-requisitos
+
+- Node.js (versão 14+ recomendada)
+- npm ou yarn
+- Angular CLI instalado globalmente
+- json-server (para backend mock)
 
 ### Clonando o Repositório
 
-`git clone https://github.com/DEXTERNATAN/avaliacao-fct.git`
+```bash
+git clone https://github.com/ThiagoMarques/avaliacao-fct.git
+cd avaliacao-fct
+```
 
 ### Instalando as Dependências
 
-`npm install`
+```bash
+npm install
+```
 
-### Instalando o angular-cli
+### Instalando o Angular CLI
 
-`npm install -g @angular/cli`
+```bash
+npm install -g @angular/cli
+```
 
 ### Instalando o json-server
 
-`npm install -g json-server`
+```bash
+npm install -g json-server
+```
 
-### Comandos principais + utilizados
-## 1.Inicializando o Servidor
-`ng serve` ou `npm start`
+## Comandos Principais
 
-## 2.Iniciando o Backend ##
-## Iniciando o serviço (raiz da aplicação) ##
-`json-server --watch db.json`
+### Inicializando o Servidor
 
-## Baixar a versão mais atual do Git ##
-`git pull origin master`
-`git pull`
+```bash
+ng serve
+# ou
+npm start
+```
 
-## Atualizar os arquivos compilados no Git ##
-`git add .`
-`git commit -m " *mensagem* "`
-`git push`
+A aplicação estará disponível em `http://localhost:4200`
 
-## Parar os Serviços ##
-`Ctrl+C`
+### Iniciando o Backend (json-server)
 
-## Goodies
+Na raiz da aplicação, execute:
 
-Expressões regulares usadas na validação de formulários
+```bash
+json-server --watch db.json
+```
+
+O backend mock estará disponível em `http://localhost:3000`
+
+### Atualizando o Repositório
+
+```bash
+# Baixar a versão mais atual
+git pull origin master
+# ou simplesmente
+git pull
+```
+
+### Atualizar os Arquivos no Git
+
+```bash
+git add .
+git commit -m "sua mensagem aqui"
+git push
+```
+
+### Parar os Serviços
+
+Pressione `Ctrl+C` no terminal
+
+## Estrutura do Projeto
+
+```
+avaliacao-fct/
+├── src/
+│   ├── app/
+│   │   ├── colaborador/      # Módulo de colaboradores
+│   │   ├── avaliacao/        # Módulo de avaliações
+│   │   ├── projeto/          # Módulo de projetos
+│   │   ├── atributo/         # Módulo de atributos
+│   │   ├── consultaavaliacao/ # Consultas de avaliação
+│   │   ├── relatorios/       # Relatórios
+│   │   ├── security/         # Segurança e autenticação
+│   │   └── shared/           # Componentes compartilhados
+│   ├── assets/               # Recursos estáticos
+│   └── environments/         # Configurações de ambiente
+├── backend/                  # Backend e chaves
+├── sql dados/               # Scripts SQL e modelos
+├── db.json                  # Dados mock para json-server
+└── package.json
+```
+
+## Tecnologias Utilizadas
+
+- **Angular 4.3**: Framework principal
+- **TypeScript**: Linguagem de programação
+- **json-server**: Backend mock para desenvolvimento
+- **AdminLTE**: Template administrativo
+- **Bootstrap**: Framework CSS
+- **Font Awesome**: Ícones
+- **RxJS**: Programação reativa
+
+## Expressões Regulares
+
+Expressões regulares usadas na validação de formulários:
 
 ### Email Regex
 
-`/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i`
+```javascript
+/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+```
 
 ### Number Regex
 
-`/^[0-9]*$/`
+```javascript
+/^[0-9]*$/
+```
 
 ## Upgrade para Angular 4.3
 
-Dependências dos pacotes que devem ficar em package.json:
+### Dependências do package.json
 
-```
-"dependencies": {
+```json
+{
+  "dependencies": {
     "@angular/animations": "4.3.3",
     "@angular/common": "4.3.3",
     "@angular/compiler": "4.3.3",
@@ -98,7 +190,46 @@ Dependências dos pacotes que devem ficar em package.json:
     "typescript": "2.4.2",
     "webdriver-manager": "12.0.6"
   }
+}
 ```
+
+## Banco de Dados
+
+O projeto inclui scripts SQL na pasta `sql dados/`:
+- Modelo transacional
+- Procedures
+- Views
+- Consultas pivot
+- Validações
+
+## Testes
+
+```bash
+# Executar testes unitários
+npm test
+
+# Executar testes e2e
+npm run e2e
+```
+
+## Build
+
+```bash
+# Build para desenvolvimento
+ng build
+
+# Build para produção
+ng build --prod
+```
+
+## Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+- Reportar bugs
+- Sugerir melhorias
+- Enviar pull requests
+
 ## Créditos
 
-Todas as imagens usadas na aplicação são pertencentes a freepik.com
+Todas as imagens usadas na aplicação são pertencentes a [freepik.com](https://www.freepik.com/)
+
